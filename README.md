@@ -8,7 +8,6 @@ PERCOBAAN 2: STUDI KASUS NILAI MAHASISWA DI SIAKAD - MEMINTA INPUTAN PENGGUNA UN
     2. Kondisi dimana dipastikan bahwa indeks 'i' tidak melebihi batas array 'nilai'.
     
 PERCOBAAN 3: STUDI KASUS NILAI MAHASISWA DI SIAKAD - MELAKUKAN OPERASI ARITMATIKA TERHADAP ELEMEN ARRAY
-    1.
     
 PERCOBAAN 4: SEARCHING
-    1. 
+    1. Break; digunakan untuk menghentikan perulangan saat nilai ditemukan.
