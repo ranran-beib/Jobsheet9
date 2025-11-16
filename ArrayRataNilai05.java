@@ -1,35 +1,50 @@
 import java.util.Scanner;
+
 public class ArrayRataNilai05 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        
-        System.out.print("Masukkan jumlah mahasiswa: ");
-        int jumlahMhs = input.nextInt();
-        int[] nilai = new int[jumlahMhs];
-        
-        for (int i = 0; i < nilai.length; i++) {
-            System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
-            nilai[i] = input.nextInt();
-        }
-        
-        double totLulus = 0;
+        Scanner sc = new Scanner(System.in);
+
+        // Input jumlah mahasiswa
+        System.out.print("Masukkan jumlah mahasiswa : ");
+        int jumlahMhs = sc.nextInt();
+
+        // Deklarasi array untuk menyimpan nilai mahasiswa
+        int[] nilaiMhs = new int[jumlahMhs];
+        double total = 0;
         int countLulus = 0;
-        double totTidakLulus = 0;
+        double totalLulus = 0;
+        double totalTidakLulus = 0;
         int countTidakLulus = 0;
-        
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i] >= 70) {
-                totLulus += nilai[i];
-                countLulus++; 
+
+        // Input nilai mahasiswa
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i+1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
+        }
+
+        // Menghitung total nilai dan jumlah mahasiswa yang lulus dan tidak lulus
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            total += nilaiMhs[i];
+            if (nilaiMhs[i] > 70) {
+                countLulus++;
+                totalLulus += nilaiMhs[i];
             } else {
-                totTidakLulus += nilai[i];
-                countTidakLulus++; 
+                countTidakLulus++;
+                totalTidakLulus += nilaiMhs[i];
             }
         }
 
-        System.out.println("\nRata-rata nilai lulus: " + (countLulus > 0 ? totLulus / countLulus : 0));
-        System.out.println("Rata-rata nilai tidak lulus: " + (countTidakLulus > 0 ? totTidakLulus / countTidakLulus : 0));
+        // Menghitung rata-rata nilai keseluruhan, lulus, dan tidak lulus
+        double rata2 = total / nilaiMhs.length;
+        double rata2Lulus = (countLulus > 0) ? totalLulus / countLulus : 0;
+        double rata2TidakLulus = (countTidakLulus > 0) ? totalTidakLulus / countTidakLulus : 0;
 
-        input.close();
+        // Menampilkan hasil
+        System.out.println("Rata-rata nilai semua mahasiswa = " + rata2);
+        System.out.println("Banyak mahasiswa yang lulus (>70) = " + countLulus);
+        System.out.println("Rata-rata nilai lulus = " + rata2Lulus);
+        System.out.println("Rata-rata nilai tidak lulus = " + rata2TidakLulus);
+
+        sc.close();
     }
 }
